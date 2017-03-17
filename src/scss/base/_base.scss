@@ -1,0 +1,26 @@
+html {
+  min-width: 320px;
+  overflow-x: hidden;
+  width: 100%;
+  font-size: $base-fs;
+}
+
+body {
+  max-width: 1920px;
+  min-width: 320px;
+  overflow-x: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: $ff;
+  font-size: $base-fs;
+  line-height: $base-lh;
+  color: $black;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 770px;
+  margin: 0 auto;
+  padding: 0 15px;
+}

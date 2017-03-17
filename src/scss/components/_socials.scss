@@ -1,0 +1,19 @@
+.socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 160px;
+  margin: 0 auto 20px;
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: $light-blue;
+    color: $white;
+    text-decoration: none;
+  }
+}
