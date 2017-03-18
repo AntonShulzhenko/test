@@ -3,7 +3,21 @@
 @import "base/fonts";
 
 // Layouts
+@import "layouts/header";
+@import "layouts/nav";
 @import "layouts/footer";
 
 // Components
+@import "components/contacts";
+@import "components/dropdown-menu";
+@import "components/breadcrumbs";
+@import "components/heading";
+@import "components/form-section";
+@import "components/panel";
+@import "components/security";
+@import "components/action";
+@import "components/categories";
 @import "components/socials";
+
+// Utils
+@import "utils/utils";

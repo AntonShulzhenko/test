@@ -1,0 +1,39 @@
+.categories {
+  display: flex;
+  justify-content: space-between;
+  &__item {
+    padding: 0 16px;
+    border-right: 1px solid $light-blue;
+    &:first-child {
+      padding-left: 0;
+      min-width: 80px;
+    }
+    &:last-child {
+      padding-right: 0;
+      border-right: none;
+      min-width: 80px;
+    }
+    a {
+      display: block;
+      font-size: 12px;
+      line-height: 18px;
+      color: $light-blue;
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+      &:visited {
+        color: darken($light-blue, 10%);
+      }
+    }
+  }
+  &__heading {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    color: $light-blue;
+    white-space: nowrap;
+  }
+}

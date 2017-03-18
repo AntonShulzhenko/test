@@ -1,0 +1,23 @@
+.header {
+  &__top {
+    padding: 10px 0;
+    background-color: $grey-bg;
+  }
+  &__bottom {
+    padding: 6px 0;
+    border-bottom: 2px solid #d1d1d1;
+  }
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    img {
+      display: block;
+    }
+  }
+  .container {
+    max-width: 905px;
+  }
+}

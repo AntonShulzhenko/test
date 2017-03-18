@@ -10,20 +10,73 @@ html
     link(rel='stylesheet' href='css/style.css')
       
   body
-    h1 Hello world!!!
+    include tpl/header
     
-    footer.footer
-      .footer__top
-        .container
-          -var icons = ['fa-facebook', 'fa-twitter', 'fa-linkedin', 'fa-google-plus'];
-          .socials
-            each icon in icons
-              a.socials__item(href="#")
-                i(aria-hidden="true" class="fa #{icon}")
-      
-      .footer__bottom
-        p.footer__copy Copyright 2016 SomeCompany, Inc.
+    .breadcrumbs
+      .container
+        a(href="", class="breadcrumbs__item breadcrumbs__item_home")
+        a(href="", class="breadcrumbs__item") Plans & Pricing
     
-    script(src="js/vendor.js")
-    script(src="js/main.js")
-      
+    .heading
+      .container
+        h1 Plans & Pricing
+        
+    .form-section
+      .container
+        p.text-center.form-section__lead Please fill out information below in order to complete the checkout.
+        
+        #color-target.business
+          form.form
+            .form__group
+              .panel
+                .panel__head
+                  p.panel__heading
+                    span 1
+                    | Choose your plan
+                    
+                .panel__body
+                  .plans
+                    .plans__item.panel.business
+                      .panel__head
+                        p.panel__heading
+                          span
+                          | Individual 
+                          br
+                          | for 1 computer
+                          
+                      .panel__body
+                        label Per Year
+                          input(type="radio", name="individual", value="39.90")
+                        label 2 Years
+                          input(type="radio", name="individual", value="69.90")
+                        label 3 Years
+                          input(type="radio", name="individual", value="99.90")
+              
+        
+    .security
+      .container
+        .security__top
+          h2.security__heading.text-center Secure & Verified
+          
+          .security__logos
+            -var imgs = ['norton', 'truste', 'macafee', 'type', 'gsa'];
+            each img in imgs
+              img(src="img/#{img}.png", alt="")
+          
+          h2.security__heading.text-center Privacy Protected
+          
+          p Security is a top priority at SecureUSB. When you submit sensitive information via the website, your information is protected both online and offline.
+
+          p Our Privacy Policy states that we will only share your personal infromation with third parties working on your behalf to complete your orderr such a UPS and FedEx.
+          
+    .action
+      .container
+        .action__inner
+          -var action = [{'h': 'Plans & Pricing', 'p': 'Select the plan that fits your needs. Prices for every budget', 'btn': 'Get Started'}, {'h': 'Need more info? Call Us', 'p': 'Jur expect customer service team is always ready to answer your questions', 'btn': '1-800-875-3230'}, {'h': 'Start Free Trial Version', 'p': 'Learn more about SecureBackup with 30-day trial download to better protect your data', 'btn': 'Start Trial'}];
+          each item in action
+            .action__item.text-center
+              h3.action__heading #{item.h}
+              p.action__p #{item.p}
+              a(href="#", class="action__btn") #{item.btn}
+    
+    include tpl/footer

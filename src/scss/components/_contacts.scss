@@ -1,0 +1,43 @@
+.contacts {
+  display: flex;
+  justify-content: flex-end;
+  &__item {
+    font-size: 12px;
+    line-height: 20px;
+    color: $grey;
+    pointer-events: none;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: {
+        image: url(../img/contacts-sprite.png);
+        repeat: no-repeat;
+      }
+    }
+    &_email {
+      margin-right: 8px;
+      padding-left: 30px;
+      &::before {
+        background: {
+          position: right center;
+        }
+      }
+    }
+    &_tel {
+      padding-left: 20px;
+      &::before {
+        background: {
+          position: left center;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.dropdown-menu {
+  display: none;
+  min-width: 150px;
+  margin: 20px 0 0;
+  padding: 5px 0;
+  list-style: none;
+  background-color: $white;
+  box-shadow: 0 1px 2px rgba($black, 0.1);
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transition: all 200ms ease;
+  transform: translateY(10px);
+  &.is-opened {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  li {
+    margin: 0;
+    display: block;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  a {
+    @extend .nav__link;
+  }
+}

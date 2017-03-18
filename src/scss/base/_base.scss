@@ -13,9 +13,14 @@ body {
   margin-right: auto;
   font-family: $ff;
   font-size: $base-fs;
+  font-weight: 400;
   line-height: $base-lh;
   color: $black;
   position: relative;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .container {
@@ -23,4 +28,11 @@ body {
   max-width: 770px;
   margin: 0 auto;
   padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.text {
+  &-center {
+    text-align: center;
+  }
 }

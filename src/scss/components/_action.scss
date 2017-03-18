@@ -1,0 +1,86 @@
+.action {
+  padding: 20px 0;
+  background-color: $blue-bg;
+  &__inner {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  &__item {
+    width: calc(100% / 3);
+    padding: 50px 15px 0;
+    border-right: 1px solid rgba($btns-blue, 0.5);
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      width: 45px;
+      height: 45px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -22px;
+      background: {
+        image: url(../img/actions-sprite.png);
+        repeat: no-repeat;
+      }
+    }
+    &:first-child {
+      border-left: 1px solid rgba($btns-blue, 0.5);
+      &::before {
+        background: {
+          position: left center;
+        }
+      }
+    }
+    &:nth-child(2) {
+      &::before {
+        background: {
+          position: center;
+        }
+      }
+    }
+    &:last-child {
+      &::before {
+        background: {
+          position: right center;
+        }
+      }
+    }
+  }
+  &__heading {
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 600;
+    color: $white;
+    margin: 0 0 8px
+  }
+  &__p {
+    font-size: 9px;
+    font-weight: 600;
+    line-height: 14px;
+    color: $white;
+    margin-bottom: 0;
+  }
+  &__btn {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 20px;
+    border: 1px solid $btns-blue;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 40px;
+    color: $btns-blue;
+    text-align: center;
+    text-decoration: none;
+    transition: all 200ms ease;
+    &:hover,
+    &:focus {
+      color: $blue-bg;
+      background-color: $btns-blue;
+    }
+  }
+}

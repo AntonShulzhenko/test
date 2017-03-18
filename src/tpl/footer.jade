@@ -1,0 +1,22 @@
+footer.footer
+  .footer__top
+    .container
+      -var icons = ['fa-facebook', 'fa-twitter', 'fa-linkedin', 'fa-google-plus'];
+      .socials
+        each icon in icons
+          a.socials__item(href="#")
+            i(aria-hidden="true" class="fa #{icon}")
+      
+      - var categories = [{'heading': 'Home', 'links': ['Solutions', 'Get User Data']}, {'heading': 'Features', 'links': ['Backup', 'Restore', 'Security & Protection', 'Advanced Settings', 'Web Portal']}, {'heading': 'Pricing & Plans', 'links': ['Personal', 'Family', 'Business']}, {'heading': 'Related Products', 'links': ['Secure USB', 'Secure Card']}, {'heading': 'Company', 'links': ['About', 'Certifications', 'Contact Us']}, {'heading': 'Support', 'links': ['How It Works', 'FAQ', 'Site Map']}];
+      .categories
+        each category in categories
+          .categories__item
+            h3.categories__heading #{category.heading}
+            each link in category.links
+              a(href="#") #{link}
+  
+  .footer__bottom
+    p.footer__copy Copyright 2016 SomeCompany, Inc.
+
+script(src="js/vendor.js")
+script(src="js/main.js")

@@ -1,0 +1,36 @@
+.form-section {
+  background-color: $white;
+  margin-top: 30px;
+  &__lead {
+    font-size: 16px;
+    margin-bottom: 30px;
+    margin-top: 0;
+  }
+}
+
+#color-target {
+  &.business {
+    .panel {
+      border-color: $blue;
+      &__head {
+        background-color: $blue;
+      }
+    }
+  }
+  &.family {
+    .panel {
+      border-color: $green;
+      &__head {
+        background-color: $green;
+      }
+    }
+  },
+  &.individual {
+    .panel {
+      border-color: $sky;
+      &__head {
+        background-color: $sky;
+      }
+    }
+  }
+}

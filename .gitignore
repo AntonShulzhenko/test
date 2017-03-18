@@ -120,3 +120,5 @@ $RECYCLE.BIN/
 ### Folders to ignore ###
 node_modules
 public
+design
+archive
