@@ -8,7 +8,7 @@
   }
 }
 
-#color-target {
+.color-target {
   &.business {
     .panel {
       border-color: $blue;
@@ -31,6 +31,27 @@
       &__head {
         background-color: $sky;
       }
+    }
+  }
+}
+
+.form {
+  @media (max-width: 768px) {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  &__group {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+  }
+  &__col {
+    width: calc(50% - 10px);
+    @media (max-width: 768px) {
+      width: 100%;
     }
   }
 }

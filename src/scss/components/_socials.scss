@@ -15,5 +15,9 @@
     background-color: $light-blue;
     color: $white;
     text-decoration: none;
+    transition: background-color 200ms ease;
+    &:hover {
+      background-color: darken($light-blue, 5%);
+    }
   }
 }

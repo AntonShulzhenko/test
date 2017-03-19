@@ -1,1 +1,1 @@
-//=require 'modules/dropdown-menu.js'
+//=require 'modules/*.js'

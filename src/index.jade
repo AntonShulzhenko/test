@@ -25,7 +25,7 @@ html
       .container
         p.text-center.form-section__lead Please fill out information below in order to complete the checkout.
         
-        #color-target.business
+        .color-target.business
           form.form
             .form__group
               .panel
@@ -36,7 +36,7 @@ html
                     
                 .panel__body
                   .plans
-                    .plans__item.panel.business
+                    .plans__item.panel.individual
                       .panel__head
                         p.panel__heading
                           span
@@ -45,13 +45,160 @@ html
                           | for 1 computer
                           
                       .panel__body
-                        label Per Year
-                          input(type="radio", name="individual", value="39.90")
-                        label 2 Years
-                          input(type="radio", name="individual", value="69.90")
-                        label 3 Years
-                          input(type="radio", name="individual", value="99.90")
-              
+                        .price.price_individual
+                          label.radio Per Year
+                            input(type="radio", name="plan", value="39.90")
+                            span.radio__text $ 39.90
+                          label.radio 2 Years
+                            input(type="radio", name="plan", value="69.90")
+                            span.radio__text $ 69.90
+                          label.radio 3 Years
+                            input(type="radio", name="plan", value="99.90")
+                            span.radio__text $ 99.90
+                            
+                    .plans__item.panel.family
+                      .panel__head.best-price
+                        p.panel__heading
+                          span
+                          | Family
+                          br
+                          | for 5 computers
+                          
+                      .panel__body
+                        .price.price_family
+                          label.radio Per Year
+                            input(type="radio", name="plan", value="39.90")
+                            span.radio__text $ 39.90
+                          label.radio 2 Years
+                            input(type="radio", name="plan", value="69.90")
+                            span.radio__text $ 69.90
+                          label.radio 3 Years
+                            input(type="radio", name="plan", value="99.90")
+                            span.radio__text $ 99.90
+                                    
+                    .plans__item.panel.business
+                      .panel__head
+                        p.panel__heading
+                          span
+                          | Business
+                          br
+                          | for 10 computers
+                          
+                      .panel__body
+                        .price.price_business
+                          label.radio Per Year
+                            input(type="radio", name="plan", value="39.90")
+                            span.radio__text $ 39.90
+                          label.radio 2 Years
+                            input(type="radio", name="plan", value="69.90", checked)
+                            span.radio__text $ 69.90
+                          label.radio 3 Years
+                            input(type="radio", name="plan", value="99.90")
+                            span.radio__text $ 99.90
+            
+            .form__group
+              .form__col
+                .panel
+                  .panel__head
+                    p.panel__heading
+                      span 2
+                      | Personal Information
+                  
+                  .panel__body
+                    label.form-field.required
+                      input(class="input", type="text", required, placeholder="First Name")
+                    
+                    label.form-field.required
+                      input(class="input", type="text", required, placeholder="Last Name")
+                    
+                    label.form-field.required
+                      input(class="input", type="text", required, placeholder="Address")
+                    
+                    label.form-field.required
+                      input(class="input", type="text", required, placeholder="City")
+                      
+                    label.form-field
+                      select.select
+                        option Andorra
+                        option Canada
+                        option Ukraine
+                        option USA
+                    
+                    label.form-field.required
+                      input(class="input", type="text", required, placeholder="State")
+                    
+                    label.form-field.required
+                      input(class="input", type="text", required, placeholder="Zip Code")
+                    
+                    label.form-field.required
+                      input(class="input", type="tel", required, placeholder="Phone")
+                    
+                    label.form-field
+                      input(class="input", type="tel", placeholder="Additional phone")
+                    
+                    label.form-field
+                      input(class="input", type="text", placeholder="Company")
+                  
+              .form__col
+                .panel
+                  .panel__head
+                    p.panel__heading
+                      span 3
+                      | Your Account
+                  
+                  .panel__body
+                    label.form-field.required
+                      input(class="input", type="email", required, placeholder="Email address")
+                    
+                    label.form-field.required
+                      input(class="input", type="email", required, placeholder="Confirm email address")
+                    
+                    label.form-field.required
+                      input(class="input", type="password", required, placeholder="Password")
+                    
+                    label.form-field.required
+                      input(class="input mb-4", type="password", required, placeholder="Confirm password")
+                  
+                .panel
+                  .panel__head
+                    p.panel__heading
+                      span 4
+                      | Payment Information
+                  
+                  .panel__body
+                    .card-data
+                      .card-data__logos
+                        -var cards = ['master-card', 'discover', 'visa', 'amex'];
+                        each card in cards
+                          img(src="img/#{card}.png", alt="#{card}")
+                      
+                      label.form-field
+                        input(class="input", type="text", placeholder="Credit card number", id="card")
+                      
+                      .card-data__group
+                        p.card-data__p Exp. date
+                        
+                        label.form-field
+                          -var dates = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'];
+                            select.select
+                              each date in dates
+                                option #{date}
+                              
+                        label.form-field
+                          -var years = ['2017', '2018', '2019', '2020'];
+                            select.select
+                              each year in years
+                                option #{year}
+                              
+                        label.form-field
+                          input(class="input", type="text", required, placeholder="CVV" id="cvv")
+                          
+                      .card-data__cta
+                        p.total-price
+                          span Total: 
+                          span.total-price__amount $69.90
+                          
+                        button.btn-submit Purchase
         
     .security
       .container

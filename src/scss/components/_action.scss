@@ -6,12 +6,24 @@
     margin: 0 auto;
     display: flex;
     justify-content: center;
+    @media (max-width: 768px) {
+      display: block;
+      max-width: 320px;
+    }
   }
   &__item {
     width: calc(100% / 3);
     padding: 50px 15px 0;
     border-right: 1px solid rgba($btns-blue, 0.5);
     position: relative;
+    @media (max-width: 768px) {
+      width: 100%;
+      border-right: none;
+      margin-bottom: 40px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
     &::before {
       content: '';
       display: block;
@@ -28,6 +40,9 @@
     }
     &:first-child {
       border-left: 1px solid rgba($btns-blue, 0.5);
+      @media (max-width: 768px) {
+        border-left: none;
+      }
       &::before {
         background: {
           position: left center;

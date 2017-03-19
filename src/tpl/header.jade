@@ -2,8 +2,8 @@ header.header
   .header__top
     .container
       .contacts
-        a(href="#" class="contacts__item contacts__item_email") sales@somecompany.com
-        a(href="#" class="contacts__item contacts__item_tel") 1-800-875-3230
+        a(href="mailto:sales@somecompany.com" class="contacts__item contacts__item_email") sales@somecompany.com
+        a(href="tel:1-800-875-3230" class="contacts__item contacts__item_tel") 1-800-875-3230
       
   .header__bottom
     .container
@@ -44,7 +44,10 @@ header.header
                 li
                   a(href="#") Site Map
                 
-            
           .nav__controls
             a(href="#", class="nav__link") Customer Login
             a(href="#", class="nav__link") Free Trial
+          
+        button(class="hamburger hamburger--squeeze nav__btn" type="button")
+          span(class="hamburger-box")
+            span(class="hamburger-inner")
