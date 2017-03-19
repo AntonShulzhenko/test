@@ -9,6 +9,7 @@
   &__head {
     padding: 10px 15px;
     position: relative;
+    transition: all 200ms ease;
   }
   &__heading {
     display: flex;
@@ -36,5 +37,6 @@
   }
   &__body {
     padding: 15px;
+    transition: all 200ms ease;
   }
 }
