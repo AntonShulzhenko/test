@@ -20,11 +20,11 @@
     }
   }
   transition: border-color 200ms ease;
+  &.error {
+    border-color: #ed4f61;
+  }
   @media (max-width: 480px) {
     font-size: 16px;
-  }
-  &:focus {
-    border-color: $sky;
   }
 }
 

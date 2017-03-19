@@ -26,7 +26,7 @@ html
         p.text-center.form-section__lead Please fill out information below in order to complete the checkout.
         
         .color-target.business
-          form.form
+          form.form#form
             .form__group
               .panel
                 .panel__head
@@ -106,16 +106,16 @@ html
                   
                   .panel__body
                     label.form-field.required
-                      input(class="input", type="text", required, placeholder="First Name")
+                      input(class="input", type="text", name="first_name", placeholder="First Name")
                     
                     label.form-field.required
-                      input(class="input", type="text", required, placeholder="Last Name")
+                      input(class="input", type="text", name="last_name"  placeholder="Last Name")
                     
                     label.form-field.required
-                      input(class="input", type="text", required, placeholder="Address")
+                      input(class="input", type="text", name="address", placeholder="Address")
                     
                     label.form-field.required
-                      input(class="input", type="text", required, placeholder="City")
+                      input(class="input", type="text", name="city", placeholder="City")
                       
                     label.form-field
                       select.select
@@ -125,19 +125,19 @@ html
                         option USA
                     
                     label.form-field.required
-                      input(class="input", type="text", required, placeholder="State")
+                      input(class="input", type="text", name="state", placeholder="State")
                     
                     label.form-field.required
-                      input(class="input", type="text", required, placeholder="Zip Code")
+                      input(class="input", type="text", name="zip_code", placeholder="Zip Code")
                     
                     label.form-field.required
-                      input(class="input", type="tel", required, placeholder="Phone")
+                      input(class="input", type="tel", name="phone", placeholder="Phone")
                     
                     label.form-field
-                      input(class="input", type="tel", placeholder="Additional phone")
+                      input(class="input", type="tel", name="additional_phone", placeholder="Additional phone")
                     
                     label.form-field
-                      input(class="input", type="text", placeholder="Company")
+                      input(class="input", type="text", name="company", placeholder="Company")
                   
               .form__col
                 .panel
@@ -148,16 +148,16 @@ html
                   
                   .panel__body
                     label.form-field.required
-                      input(class="input", type="email", required, placeholder="Email address")
+                      input(class="input equal", type="email", name="email", placeholder="Email address")
                     
                     label.form-field.required
-                      input(class="input", type="email", required, placeholder="Confirm email address")
+                      input(class="input equal", type="email", placeholder="Confirm email address")
                     
                     label.form-field.required
-                      input(class="input", type="password", required, placeholder="Password")
+                      input(class="input", type="password", name="password", placeholder="Password")
                     
                     label.form-field.required
-                      input(class="input mb-4", type="password", required, placeholder="Confirm password")
+                      input(class="input mb-4", type="password", placeholder="Confirm password")
                   
                 .panel
                   .panel__head
@@ -173,7 +173,7 @@ html
                           img(src="img/#{card}.png", alt="#{card}")
                       
                       label.form-field
-                        input(class="input", type="text", placeholder="Credit card number", id="card")
+                        input(class="input", type="text", placeholder="Credit card number", name="card_number", id="card")
                       
                       .card-data__group
                         p.card-data__p Exp. date
@@ -191,7 +191,7 @@ html
                                 option #{year}
                               
                         label.form-field
-                          input(class="input", type="text", required, placeholder="CVV" id="cvv")
+                          input(class="input", type="text", placeholder="CVV", id="cvv", name="cvv")
                           
                       .card-data__cta
                         p.total-price
