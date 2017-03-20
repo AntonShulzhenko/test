@@ -29,66 +29,84 @@
     return isValid;
   }
 
+  function confirmField(el1, el2) {
+    if (el1.val() === el2.val()) {
+      el2.removeClass('error');
+    } else {
+      el2.addClass('error');
+    }
+  }
+
   inputs.each(function() {
-    $(this).on('keypress', function() {
+    $(this).on('keyup', function() {
       validateField($(this));
+
+      if ($(this).attr('id') === 'email-2') {
+        confirmField($('#email-1'), $(this));
+      }
+
+      if ($(this).attr('id') === 'pass-2') {
+        confirmField($('#pass-1'), $(this));
+      }
     });
 
     $(this).on('blur', function() {
       validateField($(this));
+
+      if ($(this).attr('id') === 'email-2') {
+        confirmField($('#email-1'), $(this));
+      }
+
+      if ($(this).attr('id') === 'pass-2') {
+        confirmField($('#pass-1'), $(this));
+      }
     });
   });
 
-  function sendFormData(form, sendFileName) {
+  function sendFormData(form) {
     if (!form) return;
 
-    var formData     = form.serialize(),
-      // formURI        = form.data('uri'),
-      // successMessage = form.find('.success-message'),
-      // formWrap       = form.find('.form__wrap'),
-      fields         = form.find('.input');
+    var formData = form.serialize(),
+      fields     = form.find('.input');
 
-    console.log(formData);
-
-    // $.ajax({
-    //   type: 'POST',
-    //   // url: formURI + '/' + sendFileName,
-    //   data: formData,
-    //   success: function() {
-    //     // formWrap.addClass('hidden');
-    //     // successMessage.removeClass('hidden');
-    //     console.log(formData);
-    //     setTimeout(function() {
-    //       // successMessage.addClass('hidden');
-    //       // formWrap.removeClass('hidden');
-    //
-    //       fields.each(function() {
-    //         $(this).val('');
-    //       });
-    //     }, 3000);
-    //   },
-    //   error: function() {
-    //     alert('Ошибка отправки');
-    //   }
-    // });
+    $.ajax({
+      data: formData,
+      success: function() {
+        console.log(formData);
+        alert('success');
+        setTimeout(function() {
+          fields.each(function() {
+            $(this).val('');
+          });
+        }, 3000);
+      },
+      error: function(e) {
+        alert('Send Error: ' + e);
+      }
+    });
   }
 
   $('#form').on('submit', function(e) {
     var errors = [];
 
     inputs.each(function() {
-      var result = validateField($(this));
+      if ($(this).parent().hasClass('required') && $(this).val() === '') {
+        $(this).addClass('error');
+      }
 
-      if ($(this).parent().hasClass('required')) {
-        errors.push(result);
+      if ($(this).parent().hasClass('required') && $(this).hasClass('error')) {
+        errors.push(false);
       }
     });
 
     console.log(errors);
-    if(errors.length) e.preventDefault();
 
-    sendFormData($(this));
+    if(errors.length) {
+      return false;
+    } else {
+      sendFormData($(this));
+    }
 
-    return false;
+    e.preventDefault();
   });
 })(jQuery);

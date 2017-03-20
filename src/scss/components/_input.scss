@@ -47,6 +47,11 @@
       font-family: $ff;
       line-height: 40px;
     }
+    &_no-mark {
+      &::after {
+        display: none;
+      }
+    }
   }
 }
 
